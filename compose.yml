@@ -1,0 +1,14 @@
+services:
+  cron:
+    image: bybatkhuu/cron:1.1.1-261021
+    build:
+      context: .
+    restart: always
+    environment:
+      TERM: ${TERM:-xterm}
+      TZ: ${TZ:-Asia/Seoul}
+    volumes:
+      - "./volumes/configs/cron/scripts:/app/cron/scripts/custom"
+      - "./volumes/configs/cron/cron.d:/app/cron/configs/cron.d"
+      - "./volumes/storage/cron/logs:/var/log/cron"
+    tty: true
