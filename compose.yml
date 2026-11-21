@@ -1,6 +1,6 @@
 services:
   cron:
-    image: bybatkhuu/cron:1.0.0-261024
+    image: bybatkhuu/cron:1.0.1-261121
     build:
       context: .
     restart: always
